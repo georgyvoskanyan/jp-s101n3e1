@@ -16,4 +16,7 @@ public abstract class NewsEntry {
         this.title = title;
     }
 
+    abstract public int calculatePrice();
+    abstract public int calculateRating();
+
 }
