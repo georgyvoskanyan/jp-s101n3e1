@@ -1,5 +1,4 @@
 public class FootballNewsEntry extends NewsEntry {
-    private int basePrice = 300;
 
     public FootballNewsEntry(String title, String competition, String club, String player) {
         super(title);
@@ -12,18 +11,41 @@ public class FootballNewsEntry extends NewsEntry {
     protected String club;
     protected String player;
 
+    private final int basePrice = 300;
+
+    @Override
     public int calculatePrice() {
         int finalPrice = basePrice;
         if(competition.contains("Lliga de Campions")) {
-            basePrice += 100;
+            finalPrice += 100;
         }
         if(club.contains("Barça") || club.contains("Madrid")) {
-            basePrice += 100;
+            finalPrice += 100;
         }
         if(player.contains("Ferran Torres") || player.contains("Benzema")) {
-            basePrice += 50;
+            finalPrice += 50;
         }
-        return basePrice;
+        return finalPrice;
+    }
+
+    private final int baseRating = 5;
+
+    @Override
+    public int calculateRating() {
+        int finalRating = baseRating;
+        if(competition.contains("Lliga de Campions")) {
+            finalRating += 3;
+        } else if(competition.contains("Lliga")) {
+            finalRating += 2;
+        }
+
+        if(club.contains("Barça") || club.contains("Madrid")) {
+            finalRating += 1;
+        }
+        if(player.contains("Ferran Torres") || player.contains("Benzema")) {
+            finalRating += 1;
+        }
+        return finalRating;
     }
 
 }
