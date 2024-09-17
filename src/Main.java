@@ -1,3 +1,5 @@
+import helpers.InputHelper;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -77,8 +79,8 @@ public class Main {
                 }
 
                 case 3: {
-                    System.out.println("El nom del redactor:");
-                    String name = scanner.nextLine();
+
+                    String name = InputHelper.requestField("El nom del redactor:");
 
                     Editor editor =
                             editorsList.stream()
@@ -98,6 +100,23 @@ public class Main {
                     break;
                 }
                 case 4: {
+                    String editorName = InputHelper.requestField("El nom del redactor:");
+
+                    Editor editor =
+                            editorsList.stream()
+                                    .filter( e -> e.getName().equals(editorName) )
+                                    .findAny().orElse(null);
+
+                    if(editor == null) {
+                        System.out.println("ERROR: No s'ha trobat un redactor amb aquest nom!");
+                        break;
+                    }
+
+                    String newsTitle = InputHelper.requestField("El titular de la noticia:");
+
+                    /********************
+                     * NEWS DELETION CODE
+                     */
 
                     break;
                 }
