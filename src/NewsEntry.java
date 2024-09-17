@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public abstract class NewsEntry {
     private String title;
     private String text;
@@ -27,14 +29,26 @@ public abstract class NewsEntry {
 
     @Override
     public String toString() {
-        return "NewsEntry {\n Titular: \n"
+        return "NewsEntry {\n  Titular: \n"
                     + title + "\n"
-                    + "Text: \n"
+                    + "  Text: \n"
                     + text + "\n"
-                    + "Preu: \n"
+                    + "  Preu: \n"
                     + calculatePrice() + "\n"
-                    + "Puntuaciò: \n"
-                    + calculateRating() + "\n";
+                    + "  Puntuaciò: \n"
+                    + calculateRating() + "\n}";
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        NewsEntry newsEntry = (NewsEntry) o;
+        return Objects.equals(title, newsEntry.title);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(title);
+    }
 }
