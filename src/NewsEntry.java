@@ -1,8 +1,14 @@
 public abstract class NewsEntry {
     private String title;
     private String text;
-    private int rating;
-    protected int basePrice;
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
 
     public String getTitle() {
         return title;
@@ -26,9 +32,9 @@ public abstract class NewsEntry {
                     + "Text: \n"
                     + text + "\n"
                     + "Preu: \n"
-                    + rating + "\n"
+                    + calculatePrice() + "\n"
                     + "Puntuaciò: \n"
-                    + basePrice + "\n";
+                    + calculateRating() + "\n";
     }
 
 }
