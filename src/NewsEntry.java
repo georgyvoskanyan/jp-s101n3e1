@@ -19,4 +19,16 @@ public abstract class NewsEntry {
     abstract public int calculatePrice();
     abstract public int calculateRating();
 
+    @Override
+    public String toString() {
+        return "NewsEntry {\n Titular: \n"
+                    + title + "\n"
+                    + "Text: \n"
+                    + text + "\n"
+                    + "Preu: \n"
+                    + rating + "\n"
+                    + "Puntuaciò: \n"
+                    + basePrice + "\n";
+    }
+
 }
