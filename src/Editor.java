@@ -47,4 +47,14 @@ public class Editor {
     public static void setSalary(int salary) {
         Editor.salary = salary;
     }
+
+    public void printNews() {
+        for(NewsEntry newsEntry : newsEntries){
+            System.out.println(newsEntry);
+        }
+    }
+
+    public void addNewsEntry(NewsEntry entry) {
+        newsEntries.add(entry);
+    }
 }
