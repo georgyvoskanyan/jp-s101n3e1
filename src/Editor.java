@@ -3,6 +3,11 @@ import java.util.List;
 
 public class Editor {
     private String name;
+
+    public String getDNI() {
+        return DNI;
+    }
+
     private final String DNI;
     private static int salary = 1500;
 
