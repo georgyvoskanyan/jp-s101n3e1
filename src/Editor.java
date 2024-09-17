@@ -1,11 +1,25 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Editor {
     private String name;
 
     public String getDNI() {
         return DNI;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Editor editor = (Editor) o;
+        return Objects.equals(DNI, editor.DNI);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(DNI);
     }
 
     private final String DNI;
