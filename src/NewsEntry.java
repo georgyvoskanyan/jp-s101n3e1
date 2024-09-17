@@ -1,8 +1,9 @@
-public class NewsEntry {
+public abstract class NewsEntry {
     private String title;
     private String text;
     private int price;
     private int rating;
+    private int basePrice;
 
     public String getTitle() {
         return title;
@@ -15,4 +16,7 @@ public class NewsEntry {
     public NewsEntry(String title) {
         this.title = title;
     }
+
+    public int calculatePrice();
+    public int calculateRating();
 }
