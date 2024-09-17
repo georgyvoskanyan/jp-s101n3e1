@@ -1,7 +1,12 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Editor {
     private String name;
     private final String DNI;
     private static int salary = 1500;
+
+    List<NewsEntry> newsEntries = new ArrayList<>();
 
     public Editor(String DNI, String name) {
         this.DNI = DNI;
